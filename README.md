@@ -46,6 +46,11 @@ In addition, it will create all 6 allowed pets in the database, 11 categories, 3
 
 Detailed information about each of the initial mock data created will be listed further down below  
 
+If you wish to connect to a cloud server, and after providing a connection string in `ATLAS_CONT`, you may run the cloud server:   
+```bash
+  npm start
+```
+
 ## Features
 
 ### REST API  
