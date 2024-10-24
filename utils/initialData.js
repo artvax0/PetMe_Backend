@@ -1,4 +1,6 @@
 import { generateUserPassword } from "./bcrypt.js"
+import 'dotenv/config';
+const PORT = process.env.PORT || 8181;
 
 const initialUsers = [
   {
@@ -10,7 +12,7 @@ const initialUsers = [
     email: 'yotta@terracotta.com',
     password: generateUserPassword('1yotta!Terracotta'),
     image: {
-      url: 'http://localhost:8181/images/avatar_male.webp',
+      url: `http://localhost:${PORT}/images/avatar_male.webp`,
       alt: 'Male avatar',
     },
     phone: '050-0000001',
@@ -35,7 +37,7 @@ const initialUsers = [
     email: 'lthompson@petme.com',
     password: generateUserPassword('L@thompson321'),
     image: {
-      url: 'http://localhost:8181/images/avatar_female.svg',
+      url: `http://localhost:${PORT}/images/avatar_female.svg`,
       alt: 'Female avatar',
     },
     phone: '012-345 6788',
@@ -60,7 +62,7 @@ const initialUsers = [
     email: 'peterjones@test.com',
     password: generateUserPassword('peterJones!123'),
     image: {
-      url: 'http://localhost:8181/images/avatar_uni.png',
+      url: `http://localhost:${PORT}/images/avatar_uni.png`,
       alt: 'Avatar',
     },
     phone: '012-345 6787',
