@@ -5,7 +5,6 @@ import chalk from 'chalk';
 import fs from 'fs'
 
 const logger = config.get('LOGGER');
-const now = currentTime();
 const dirPath = './logs'
 
 if (!fs.existsSync(dirPath)) {
@@ -14,6 +13,7 @@ if (!fs.existsSync(dirPath)) {
 }
 
 const logToFile = (log) => {
+  const now = currentTime();
   const { year, month, day } = now;
   const currentFile = dirPath + `/${year}-${month}-${day}-error-logs.log`;
   if (!fs.existsSync(currentFile)) {
@@ -28,6 +28,7 @@ const logToFile = (log) => {
 
 const morganLogger = () => {
   return morgan(function (tokens, req, res) {
+    const now = currentTime();
     const log = [
       `[${now.year}/${now.month}/${now.day} ${now.hours}:${now.minutes}:${now.seconds}]`,
       tokens.method(req, res),
